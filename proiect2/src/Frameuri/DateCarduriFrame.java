@@ -22,6 +22,12 @@ public class DateCarduriFrame extends JFrame implements ActionListener {
 
     JButton brd, bcr, transilvania, raiffeisen;
 
+    public static int contorBcr = 0;
+    public static int contorBrd = 0;
+    public static int contorTransilvania = 0;
+    public static int contorRaiffeisen = 0;
+
+
 
 
     public DateCarduriFrame() {
@@ -68,12 +74,14 @@ public class DateCarduriFrame extends JFrame implements ActionListener {
 
             ArrayListsForInfo.date.add(new Persoana(numet.getText(), prenumet.getText()));
             ArrayListsForInfo.cardBcr.add(new Bcr(Double.parseDouble(sumabanit.getText())));
+            contorBcr = contorBrd + 1;
             this.setVisible(false);
             new Meniu();
         } else if (e.getSource() == brd) {
 
             ArrayListsForInfo.date.add(new Persoana(numet.getText(), prenumet.getText()));
             ArrayListsForInfo.cardBrd.add(new Brd(Double.parseDouble(sumabanit.getText())));
+            contorBrd = contorBrd + 1;
             this.setVisible(false);
             new Meniu();
 
@@ -81,6 +89,7 @@ public class DateCarduriFrame extends JFrame implements ActionListener {
 
             ArrayListsForInfo.date.add(new Persoana(numet.getText(), prenumet.getText()));
             ArrayListsForInfo.cardTransilvania.add(new Transilvania(Double.parseDouble(sumabanit.getText())));
+            contorTransilvania = contorTransilvania + 1;
             this.setVisible(false);
             new Meniu();
 
@@ -88,6 +97,7 @@ public class DateCarduriFrame extends JFrame implements ActionListener {
 
             ArrayListsForInfo.date.add(new Persoana(numet.getText(),prenumet.getText()));
             ArrayListsForInfo.cardRaiffeisen.add(new Raiffeisen(Double.parseDouble(sumabanit.getText())));
+            contorRaiffeisen = contorRaiffeisen + 1;
             this.setVisible(false);
             new Meniu();
 

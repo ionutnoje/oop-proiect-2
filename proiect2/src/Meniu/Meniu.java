@@ -32,7 +32,7 @@ public class Meniu extends JFrame implements ActionListener
     JMenu refresh = new JMenu("refresh");
 
     JMenuItem refreshh = new JMenuItem("refresh");
-    JMenuItem back = new JMenuItem("back");
+
     JMenuItem exit = new JMenuItem("exit");
 
     JPanel panel = new JPanel();
@@ -131,12 +131,10 @@ public class Meniu extends JFrame implements ActionListener
         menuBar.add(refresh);
 
         navigare.add(exit);
-        navigare.add(back);
         refresh.add(refreshh);
 
         exit.addActionListener(this);
 
-        back.addActionListener(this);
 
         refreshh.addActionListener(this);
 
@@ -184,11 +182,6 @@ public class Meniu extends JFrame implements ActionListener
         if(e.getSource() == exit)
         {
             System.exit(0);
-        }
-        else if(e.getSource() == back)
-        {
-            this.setVisible(false);
-            new DateCarduriFrame();
         }
         else if(e.getSource() == refreshh)
         {

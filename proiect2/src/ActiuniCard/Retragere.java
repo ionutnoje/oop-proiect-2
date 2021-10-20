@@ -5,6 +5,7 @@ import Carduri.Bcr;
 import Carduri.Brd;
 import Carduri.Raiffeisen;
 import Carduri.Transilvania;
+import Frameuri.DateCarduriFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -85,51 +86,67 @@ public class Retragere extends JFrame implements ActionListener
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == bancaBcr)
         {
-            if(bcr.verificareRetragere(Double.parseDouble(textFieldSuma.getText())) == 0)
+            if(DateCarduriFrame.contorBcr == 1)
             {
-                ArrayListsForInfo.cardBcr.get(0).retragere(Double.parseDouble(textFieldSuma.getText()));
-                this.setVisible(false);
+                if(bcr.verificareRetragere(Double.parseDouble(textFieldSuma.getText())) == 0)
+                {
+                    ArrayListsForInfo.cardBcr.get(0).retragere(Double.parseDouble(textFieldSuma.getText()));
+                    this.setVisible(false);
+                }
             }
             else
             {
-                System.out.println("nu se poate realiza tranzactia");
+                JOptionPane.showMessageDialog(null,"nu puteti puteti retrage bani/nu detineti card","eroare la card",JOptionPane.ERROR_MESSAGE);
             }
+
+
+
+
 
         }
         else if(e.getSource() == bancaBrd)
         {
-            if(brd.verificareRetragere(Double.parseDouble(textFieldSuma.getText())) == 0)
+            if(DateCarduriFrame.contorBrd == 1)
             {
-                ArrayListsForInfo.cardBrd.get(0).retragere(Double.parseDouble(textFieldSuma.getText()));
-                this.setVisible(false);
+                if(brd.verificareRetragere(Double.parseDouble(textFieldSuma.getText())) == 0)
+                {
+                    ArrayListsForInfo.cardBrd.get(0).retragere(Double.parseDouble(textFieldSuma.getText()));
+                    this.setVisible(false);
+                }
             }
             else
             {
-                System.out.println("nu se poate realiza tranzactia");
+                JOptionPane.showMessageDialog(null,"nu puteti puteti retrage bani/nu detineti card","eroare la card",JOptionPane.ERROR_MESSAGE);
             }
         }
         else if(e.getSource() == bancaTransilvania)
         {
-            if(transilvania.verificareRetragere(Double.parseDouble(textFieldSuma.getText())) == 0)
+            if(DateCarduriFrame.contorTransilvania == 1)
             {
-                ArrayListsForInfo.cardTransilvania.get(0).retragere(Double.parseDouble(textFieldSuma.getText()));
-                this.setVisible(false);
+                if(transilvania.verificareRetragere(Double.parseDouble(textFieldSuma.getText())) == 0)
+                {
+                    ArrayListsForInfo.cardTransilvania.get(0).retragere(Double.parseDouble(textFieldSuma.getText()));
+                    this.setVisible(false);
+                }
             }
             else
             {
-                System.out.println("nu se poate realiza tranzactia");
+                JOptionPane.showMessageDialog(null,"nu puteti puteti retrage bani/nu detineti card","eroare la card",JOptionPane.ERROR_MESSAGE);
             }
         }
         else if(e.getSource() == bancaRaiffeisen)
         {
-            if(raiffeisen.verificareRetragere(Double.parseDouble(textFieldSuma.getText())) == 0)
+            if(DateCarduriFrame.contorRaiffeisen == 1)
             {
-                ArrayListsForInfo.cardRaiffeisen.get(0).retragere(Double.parseDouble(textFieldSuma.getText()));
-                this.setVisible(false);
+                if(raiffeisen.verificareRetragere(Double.parseDouble(textFieldSuma.getText())) == 0)
+                {
+                    ArrayListsForInfo.cardRaiffeisen.get(0).retragere(Double.parseDouble(textFieldSuma.getText()));
+                    this.setVisible(false);
+                }
             }
             else
             {
-                System.out.println("nu se poate realiza tranzactia");
+                JOptionPane.showMessageDialog(null,"nu puteti puteti retrage bani/nu detineti card","eroare la card",JOptionPane.ERROR_MESSAGE);
             }
         }
     }

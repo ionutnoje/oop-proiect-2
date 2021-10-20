@@ -5,6 +5,7 @@ import Carduri.Bcr;
 import Carduri.Brd;
 import Carduri.Raiffeisen;
 import Carduri.Transilvania;
+import Frameuri.DateCarduriFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -79,23 +80,52 @@ public class CreareCard extends JFrame implements ActionListener
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == bancaBcr)
         {
-            ArrayListsForInfo.cardBcr.add(new Bcr(Double.parseDouble(textFieldSuma.getText())));
-            this.setVisible(false);
+            if(DateCarduriFrame.contorBcr == 0)
+            {
+                ArrayListsForInfo.cardBcr.add(new Bcr(Double.parseDouble(textFieldSuma.getText())));
+                this.setVisible(false);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"nu puteti avea mai multe carduri la aceeasi banca","eroare la adaugare",JOptionPane.ERROR_MESSAGE);
+            }
+
         }
         else if(e.getSource() == bancaBrd)
         {
-            ArrayListsForInfo.cardBrd.add(new Brd(Double.parseDouble(textFieldSuma.getText())));
-            this.setVisible(false);
+            if(DateCarduriFrame.contorBrd == 0)
+            {
+                ArrayListsForInfo.cardBrd.add(new Brd(Double.parseDouble(textFieldSuma.getText())));
+                this.setVisible(false);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"nu puteti avea mai multe carduri la aceeasi banca","eroare la adaugare",JOptionPane.ERROR_MESSAGE);
+            }
         }
         else if(e.getSource() == bancaTransilvania)
         {
-            ArrayListsForInfo.cardTransilvania.add(new Transilvania(Double.parseDouble(textFieldSuma.getText())));
-            this.setVisible(false);
+            if(DateCarduriFrame.contorTransilvania == 0)
+            {
+                ArrayListsForInfo.cardTransilvania.add(new Transilvania(Double.parseDouble(textFieldSuma.getText())));
+                this.setVisible(false);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"nu puteti avea mai multe carduri la aceeasi banca","eroare la adaugare",JOptionPane.ERROR_MESSAGE);
+            }
         }
         else if(e.getSource() == bancaRaiffeisen)
         {
-            ArrayListsForInfo.cardRaiffeisen.add(new Raiffeisen(Double.parseDouble(textFieldSuma.getText())));
-            this.setVisible(false);
+            if(DateCarduriFrame.contorRaiffeisen == 0)
+            {
+                ArrayListsForInfo.cardRaiffeisen.add(new Raiffeisen(Double.parseDouble(textFieldSuma.getText())));
+                this.setVisible(false);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"nu puteti avea mai multe carduri la aceeasi banca","eroare la adaugare",JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 }

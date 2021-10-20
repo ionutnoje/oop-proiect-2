@@ -1,6 +1,7 @@
 package ActiuniCard;
 
 import ArrayLists.ArrayListsForInfo;
+import Frameuri.DateCarduriFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -75,24 +76,56 @@ public class Depunere extends JFrame implements ActionListener
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == bancaBcr)
         {
-            //ArrayListsForInfo.cardBcr.add(new Bcr(Double.parseDouble(textFieldSuma.getText())));
-            ArrayListsForInfo.cardBcr.get(0).depunere(Double.parseDouble(textFieldSuma.getText()));
-            this.setVisible(false);
+            if(DateCarduriFrame.contorBcr == 1)
+            {
+                //ArrayListsForInfo.cardBcr.add(new Bcr(Double.parseDouble(textFieldSuma.getText())));
+                ArrayListsForInfo.cardBcr.get(0).depunere(Double.parseDouble(textFieldSuma.getText()));
+                this.setVisible(false);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"nu puteti puteti depune bani/nu detineti card","eroare la card",JOptionPane.ERROR_MESSAGE);
+            }
+
         }
         else if(e.getSource() == bancaBrd)
         {
-            ArrayListsForInfo.cardBrd.get(0).depunere(Double.parseDouble(textFieldSuma.getText()));
-            this.setVisible(false);
+            if(DateCarduriFrame.contorBrd == 1)
+            {
+                //ArrayListsForInfo.cardBcr.add(new Bcr(Double.parseDouble(textFieldSuma.getText())));
+                ArrayListsForInfo.cardBrd.get(0).depunere(Double.parseDouble(textFieldSuma.getText()));
+                this.setVisible(false);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"nu puteti puteti depune bani/nu detineti card","eroare la card",JOptionPane.ERROR_MESSAGE);
+            }
         }
         else if(e.getSource() == bancaTransilvania)
         {
-            ArrayListsForInfo.cardTransilvania.get(0).depunere(Double.parseDouble(textFieldSuma.getText()));
-            this.setVisible(false);
+            if(DateCarduriFrame.contorTransilvania == 1)
+            {
+                //ArrayListsForInfo.cardBcr.add(new Bcr(Double.parseDouble(textFieldSuma.getText())));
+                ArrayListsForInfo.cardTransilvania.get(0).depunere(Double.parseDouble(textFieldSuma.getText()));
+                this.setVisible(false);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"nu puteti puteti depune bani/nu detineti card","eroare la card",JOptionPane.ERROR_MESSAGE);
+            }
         }
         else if(e.getSource() == bancaRaiffeisen)
         {
-            ArrayListsForInfo.cardRaiffeisen.get(0).depunere(Double.parseDouble(textFieldSuma.getText()));
-            this.setVisible(false);
+            if(DateCarduriFrame.contorRaiffeisen == 1)
+            {
+                //ArrayListsForInfo.cardBcr.add(new Bcr(Double.parseDouble(textFieldSuma.getText())));
+                ArrayListsForInfo.cardRaiffeisen.get(0).depunere(Double.parseDouble(textFieldSuma.getText()));
+                this.setVisible(false);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"nu puteti puteti depune bani/nu detineti card","eroare la card",JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 }
