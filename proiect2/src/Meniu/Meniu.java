@@ -3,6 +3,7 @@ package Meniu;
 import ActiuniCard.CreareCard;
 import ActiuniCard.Depunere;
 import ActiuniCard.Retragere;
+import ActiuniCard.Transfer_bani;
 import ArrayLists.ArrayListsForInfo;
 import Frameuri.DateCarduriFrame;
 
@@ -22,7 +23,7 @@ public class Meniu extends JFrame implements ActionListener
     JLabel soldcardurilor = new JLabel("soldul cardurilor: ");
     JLabel meniu = new JLabel("Meniu: ");
 
-    JButton cumparare,retragere,depunere,adaugare_card;
+    JButton cumparare,retragere,depunere,adaugare_card,transfer_bani;
 
 
     double suma_totala_conturi = 0;
@@ -155,13 +156,15 @@ public class Meniu extends JFrame implements ActionListener
         meniu_carduri.setLayout(new GridLayout(5,1,10,0));
         meniu_carduri.setBounds(300,250,200,100);
         meniu_carduri.add(meniu);
-        meniu_carduri.add(cumparare = new JButton("SHOPPING"));
+        meniu_carduri.add(transfer_bani = new JButton("transfer bani"));
         meniu_carduri.add(retragere = new JButton("retragere suma"));
         meniu_carduri.add(depunere = new JButton("depunere suma"));
         meniu_carduri.add(adaugare_card = new JButton("adaugare card"));
 
 
-        cumparare.addActionListener(this);
+
+
+        transfer_bani.addActionListener(this);
         retragere.addActionListener(this);
         depunere.addActionListener(this);
         adaugare_card.addActionListener(this);
@@ -188,9 +191,10 @@ public class Meniu extends JFrame implements ActionListener
             this.setVisible(false);
             new Meniu();
         }
-        else if(e.getSource() == cumparare)
+        else if(e.getSource() == transfer_bani)
         {
             System.out.println("cumparare");
+            new Transfer_bani();
         }
         else if(e.getSource() == retragere)
         {

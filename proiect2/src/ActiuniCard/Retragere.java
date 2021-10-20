@@ -41,7 +41,7 @@ public class Retragere extends JFrame implements ActionListener
 
     public Retragere()
     {
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.setLayout(new BorderLayout());
         this.setPreferredSize(new Dimension(500,300));
         this.add(panelsuma,BorderLayout.NORTH);
